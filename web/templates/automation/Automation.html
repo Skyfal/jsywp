@@ -1,0 +1,52 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="Automation">自动化部署管理</a></li>
+  <li class="active">自动化部署</li>
+</ol>
+<h1>自动化部署</h1>
+<br>
+<div class="row margin-bottom-30">
+  <div class="col-md-12">
+    <form role="form" id="templatemo-preferences-form">
+      <div class="row">
+        <div class="col-md-3 margin-bottom-15">
+          <label class="control-label">请选择部署的服务</label>
+           <select class="form-control" ng-model="service" ng-options="service.label for service in services">
+            <option value="">-- 请选择部署服务 --</option>
+          </select>
+        </div>
+        <div class="col-md-3 margin-bottom-15">
+          <label class="control-label">请选择部署的IP</label>
+            <select class="form-control" ng-model="ip"
+            ng-options="ip for ip in service.ips">
+            <option value="">-- 请选择部署IP --</option>
+          </select>
+        </div> 
+        <div class="col-md-3 margin-bottom-15">
+          <label for="projectName" class="control-label">版本选择</label>
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+        <div class="col-md-3 margin-bottom-15">
+          <br>
+          <div class="col-md-2 col-md-offset-2"><button class="btn btn-primary">部署</button></div>
+          <div class="col-md-2 col-md-offset-2"><button type="submit" class="btn btn-primary">日志</button></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 margin-bottom-15">
+          <label for="notes">日志</label>
+          <textarea class="form-control" rows="18" id="notes"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-default">清空</button>    
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

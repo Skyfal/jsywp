@@ -1,0 +1,130 @@
+  <ol class="breadcrumb">
+    <li><a ui-sref="#">项目在线率管理</a></li>
+    <li><a ui-sref="ProjectList">接入项目档案</a></li>
+    <li class="active">项目档案信息</li>
+  </ol>
+  <h1>项目档案信息</h1>
+  <p>
+  <div class="row">
+    <div class="col-md-12">
+      <form role="form" id="templatemo-preferences-form">
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerCode" class="control-label">客户编号</label>
+            <input type="text" class="form-control" id="customerCode" value="0001" disabled>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerName" class="control-label">客户名称</label>
+            <input type="text" class="form-control" id="customerName" value="深圳万科" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectCode" class="control-label">项目编号</label>
+            <input type="text" class="form-control" id="projectCode" value="0030202" disabled>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectName" class="control-label">项目名称</label>
+            <input type="text" class="form-control" id="projectName" value="深圳万科第五园" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="frontEndVersion" class="control-label">前端产品版本</label>
+            <select class="form-control margin-bottom-15" id="frontEndVersion">
+              <option>G3物业版3.1.0</option>
+              <option>G3商业版</option>
+              <option>G3 3.2.1</option>
+              <option>G3 4.1</option>
+              <option>G3 4.2</option>
+              <option>JSDS</option>
+            </select>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="adapterVersion" class="control-label">适配器版本</label>
+            <select class="form-control margin-bottom-15" id="adapterVersion" >
+              <option>G3 2.3.0</option>
+              <option>G3 3.2.1</option>
+              <option>G3 4.1</option>
+              <option>G3 4.2</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+              <label for="functions" class="control-label">功能实现</label>
+              <p>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1" checked> 数据稽查
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2" checked> 捷生活APP
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3" checked> 捷易商
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox4" value="option4" checked> 捷物管
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox5" value="option5" checked> 扫码支付
+              </label>                      
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="status" class="control-label">项目状态</label>
+            <select class="form-control margin-bottom-15" id="status" >
+              <option>实施中</option>
+              <option>运维中</option>
+              <option>暂停</option>
+              <option>退出</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label class="control-label">所属系统</label>
+             <select class="form-control" ng-model="subsystem" ng-options="subsystem.label for subsystem in subsystems">
+              <option value="">-- 请选择所属系统 --</option>
+            </select>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label class="control-label">所属分公司</label>
+             <select class="form-control" ng-model="subcompany"
+              ng-options="subcompany for subcompany in subsystem.subcompanys">
+              <option value="">-- 请选择所属分公司 --</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectName" class="control-label">创建日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+             <label for="linkMaster" class="control-label">接入负责人</label>
+            <input type="text" class="form-control" id="linkMaster" value="余腾" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="notes">备注</label>
+            <textarea class="form-control" rows="3" id="notes"></textarea>
+          </div>
+        </div>
+      
+      <div class="row templatemo-form-buttons">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">保存</button>
+          <button type="reset" class="btn btn-default">重置</button>    
+          <button type="cancel" class="btn btn-default" ng-click="backToPrevious()">取消</button>    
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</p>
