@@ -1,0 +1,81 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="#">项目在线率管理</a></li>
+  <li class="active">项目在线日志管理</li>
+</ol>
+<h1>项目在线率日志列表</h1>
+
+<div class="row margin-bottom-30">
+  <div class="col-md-12">
+    <ul class="nav nav-pills">
+      <li ng-repeat="item in items" class="{{item.style}}" ng-click="active($index)"><a class="btn">{{item.name}} <span class="badge">{{item.count}}</span></a></li>
+    </ul>          
+  </div>
+</div> 
+<div class="row">
+  <div class="col-md-12">
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-default">Sort by</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li ng-repeat="menu in menus"><a class="btn" ng-click="sortBy(menu)">{{menu}}</a></li>
+      </ul>
+    </div>
+    <div class="table-responsive">
+      <h4 class="margin-bottom-15">项目列表</h4>
+      <table class="table table-striped table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Edit</th>
+            <th>在线状态</th>
+            <th>监测日期</th>
+            <th>项目名称</th>
+            <th>所属客户</th>
+            <th>所属系统</th>
+            <th>所属分公司</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="project in projectList">
+            <td>{{$index+1}}</td>
+            <td><a class="btn btn-default" ng-click="edit(this)">Edit</a></td>
+            <td>{{project.onlinestatus}}</td>
+            <td>{{project.name}}</td>
+            <td>{{project.date}}</td>
+            <td>{{project.customer}}</td>
+            <td>{{project.subsystem}}</td>
+            <td>{{project.subcompany}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="formactdion pull-left col-md-8">
+        <a ui-sref="ProjectOnlineAdd" class="btn btn-primary">新增</a>
+
+        <input id="lefile" type="file" ng-show="false" ngf-select ng-model="excelFile" accept="application/vnd.ms-excel">
+
+       <!-- <span onclick="$('input[id=lefile]').click();"><a class="btn btn-primary">导入</a></span>-->
+        <span onclick="lefile.click();"><a class="btn btn-primary">导入</a></span>{{excelFile.name}}
+        <span ng-click="uploadExcel(excelFile)"><a class="btn btn-primary">上传</a></span>
+
+      </div>
+
+      <ul class="pagination pull-right">
+        <li class="enable" ng-click="first()"><a ui-sref="ProjectOnlineList">首页</a></li>
+        <li class="{{leftpagestatus}}" ng-click="leftchangepage()"><a ui-sref="ProjectOnlineList">&laquo;</a></li>
+
+        <li class="{{page.status}}" ng-repeat="page in pages" ng-click="changepage($index)"><a class='btn'>{{ page.index + 1 }}</a></li>
+
+        <li class="{{rightpagestatus}}" ng-click="rightchangepage()"><a ui-sref="ProjectOnlineList">&raquo;</a></li>
+        <li class="{{rightpagestatus}}" ng-click="rightchangepage()"><a ui-sref="ProjectOnlineList">共&nbsp; &nbsp;{{allpages}}&nbsp; &nbsp;页</a></li>
+
+
+      </ul>
+    </div>
+    
+  </div>
+</div>

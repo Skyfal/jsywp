@@ -1,0 +1,88 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="#">API接入管理</a></li>
+  <li><a ui-sref="APIList">API接口清单</a></li>
+  <li class="active">API接口编辑</li>
+</ol>
+<h1>API接口编辑</h1>
+<p>
+<div class="row">
+    <div class="col-md-12">
+      <form role="form" id="templatemo-preferences-form">
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerCode" class="control-label">API编号</label>
+            <input type="text" class="form-control" id="customerCode" value="0001" disabled>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerName" class="control-label">协议名称</label>
+            <input type="text" class="form-control" id="customerName" value="门禁开门协议" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectCode" class="control-label">服务标识</label>
+            <input type="text" class="form-control" id="projectCode" value="3c.door.opendoor" disabled>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="frontEndVersion" class="control-label">自从</label>
+            <select class="form-control margin-bottom-15" id="frontEndVersion" disabled>
+              <option>v2.0</option>
+              <option>v2.2</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkDate" class="control-label">接口创建日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" disabled/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkMaster" class="control-label">接口开发人</label>
+            <input type="text" class="form-control" id="linkMaster" value="余腾" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkDate" class="control-label">接口最新测试日期</label>
+            <input type="date" class="form-control" id="linkDate" value="2016-03-02" disabled>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="onlineStataus" class="control-label">接口使用状态</label>
+            <br>
+           <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus1" value="onlinie" checked> 生产用
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus2" value="offline"> 未上线
+          </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="subCompany" class="control-label">接口描述</label>
+            <textarea class="form-control" rows="1">查询用户有控制权限的门禁设备信息</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="notes">备注</label>
+            <textarea class="form-control" rows="3" id="notes"></textarea>
+          </div>
+        </div>
+      
+        <div class="row templatemo-form-buttons">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="reset" class="btn btn-default">重置</button>    
+            <button type="cancel" class="btn btn-default">取消</button>    
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</p>

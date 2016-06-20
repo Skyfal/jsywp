@@ -1,0 +1,114 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="#">API接入管理</a></li>
+  <li><a ui-sref="APICustomerList">API接入客户档案</a></li>
+  <li class="active">客户档案</li>
+</ol>
+<h1>客户档案</h1>
+<p>
+  <div class="row">
+    <div class="col-md-12">
+      <form role="form" id="templatemo-preferences-form">
+        <div class="row">
+         <div class="col-md-6 margin-bottom-15">
+            <label for="coperateStatus" class="control-label">合作状态</label>
+           <select class="form-control margin-bottom-15" id="coperateStatus" >
+            <option>售前接洽</option>
+            <option>合作中</option>
+            <option>中止合作</option>
+           </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerCode" class="control-label">客户编号</label>
+            <input type="text" class="form-control" id="customerCode" value="" >
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerName" class="control-label">客户名称</label>
+            <input type="text" class="form-control" id="customerName" value="" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="bizDate" class="control-label">接入日期</label>
+            <input type="date" class="form-control" id="bizDate" value="" >
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+             <label for="linkMaster" class="control-label">业务联系人</label>
+            <input type="text" class="form-control" id="linkMaster" value="" >
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="bizSystem" class="control-label">所属系统</label>
+            <select class="form-control margin-bottom-15" id="bizSystem" >
+            <option>业务一系统</option>
+            <option>业务二系统</option>
+            <option>业务三系统</option>
+           </select>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="subCompany" class="control-label">所属分公司</label>
+            <select class="form-control margin-bottom-15" id="subCompany" >
+              <option>北京分公司</option>
+              <option>广州分公司</option>
+              <option>上海分公司</option>
+              <option>东莞公司</option>
+              <option>佛山分公司</option>
+              <option>西安分公司</option>
+              <option>汕头分公司</option>
+              <option>杭州分公司</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkDate" class="control-label">监测日期</label>
+            <input type="text" class="form-control" id="linkDate" value="" >
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="onlineStataus" class="control-label">在线状态</label>
+            <br>
+           <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus1" value="" checked> 在线
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus2" value=""> 离线
+          </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="subCompany" class="control-label">离线原因</label>
+            <select class="form-control margin-bottom-15" id="subCompany">
+              <option></option>
+              <option>网络不通</option>
+              <option>适配器关闭</option>
+              <option>SDK服务停止</option>
+              <option>客户不接入</option>
+              <option>集成服务不在线</option>
+              <option>适配器假死</option>
+              <option>前端电脑当机</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="notes">备注</label>
+            <textarea class="form-control" rows="3" id="notes"></textarea>
+          </div>
+        </div>
+      
+        <div class="row templatemo-form-buttons">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="reset" class="btn btn-default">重置</button>    
+            <button type="cancel" class="btn btn-default">取消</button>    
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</p>

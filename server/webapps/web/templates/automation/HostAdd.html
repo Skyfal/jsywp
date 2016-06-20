@@ -1,0 +1,101 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="#">自动化部署管理</a></li>
+  <li><a ui-sref="Hosts">主机档案 </a></li>
+  <li class="active">主机档案信息</li>
+</ol>
+<h1>主机档案信息</h1>
+<p>
+<div class="row">
+    <div class="col-md-12">
+      <form role="form" id="templatemo-preferences-form">
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerCode" class="control-label">主机编号</label>
+            <input type="text" class="form-control" id="customerCode" value="" required>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="customerName" class="control-label">主机名称</label>
+            <input type="text" class="form-control" id="customerName" value="" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectCode" class="control-label">主机IP</label>
+            <input type="text" class="form-control" id="projectCode" value="" required>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="projectName" class="control-label">创建日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="frontEndVersion" class="control-label">项目名称</label>
+            <input type="text" class="form-control" id="projectName" value="" required>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="frontEndVersion" class="control-label">服务名称</label>
+            <input type="text" class="form-control" id="projectName" value="" required>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkMaster" class="control-label">项目负责人</label>
+            <input type="text" class="form-control" id="linkMaster" value="" required>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="linkMaster" class="control-label">主机创建人</label>
+            <input type="text" class="form-control" id="linkMaster" value="" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 margin-bottom-15">
+            <label for="subCompany" class="control-label">所属系统</label>
+            <select class="form-control margin-bottom-15" id="subCompany">
+              <option>一系统</option>
+              <option>二系统</option>
+              <option>三系统</option>
+            </select>
+          </div>
+          <div class="col-md-6 margin-bottom-15">
+            <label for="onlineStataus" class="control-label">主机状态</label>
+            <br>
+           <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus1" value="onlinie" checked> 正常
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="onlineStataus" id="onlineStataus2" value="offline"> 闲置
+          </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="subCompany" class="control-label">主机描述</label>
+            <textarea class="form-control" rows="1" placeholder="请输入主机的配置等信息，例如“4核4G硬盘80G”. . . " required></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 margin-bottom-15">
+            <label for="notes">备注</label>
+            <textarea class="form-control" rows="3" id="notes"></textarea>
+          </div>
+        </div>
+      
+        <div class="row templatemo-form-buttons">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="reset" class="btn btn-default">重置</button>    
+            <button type="cancel" class="btn btn-default">取消</button>    
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</p>
