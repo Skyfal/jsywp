@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <title>捷顺科技运维中心运维管理平台</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/templatemo_main.css">
+<!-- 
+Dashboard Template 
+http://www.templatemo.com/preview/templatemo_415_dashboard
+-->
+</head>
+<body>
+  <div id="main-wrapper">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <div class="logo"><img src="../../images/logo.png"/><h1>捷顺科技运维管理平台</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="template-page-wrapper">
+      <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+          <li>
+            <form class="navbar-form">
+              <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
+              <span class="btn btn-default">Go</span>
+            </form>
+          </li>
+          <li ><a href="../../index.html"><i class="fa fa-home"></i>仪表盘</a></li>
+          <li class="sub">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>项目在线率管理 <div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="../project/ProjectList.html">接入项目档案列表</a></li>
+              <li><a href="../project/ProjectOnlineList.html">项目在线日志管理</a></li>
+              <li><a href="../project/ProjectOnlineState.html">项目在线率统计分析</a></li>
+            </ul>
+          </li>
+          <li class="sub open">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>API接入管理<div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="APICustomerList.html">API接入客户档案</a></>
+              <li class="active"><a href="APIProjectList.html">API接入项目档案列表</a></li>
+              <li><a href="APIProjectState.html">API接入项目统计分析</a></li>
+            </ul>
+          </li>
+          <li class="sub">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>自动化部署管理<div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="#">主机档案</a></>
+              <li><a href="#">项目档案</a></li>
+              <li><a href="#">业务服务档案</a></li>
+              <li><a href="#">管理系统(N)部署</a></li>
+              <li><a href="#">集成系统(N)部置</a></li>
+              <li><a href="#">Openfire(N)部置</a></li>
+              <li><a href="#">管理系统(C)部署</a></li>
+              <li><a href="#">集成系统(C)部置</a></li>
+              <li><a href="#">Openfire(C)部署</a></li>
+
+            </ul>
+          </li>
+          <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+      <div class="templatemo-content-wrapper">
+        <div class="templatemo-content">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Admin Panel</a></li>
+            <li><a href="#">Manage Users</a></li>
+            <li class="active">Tables</li>
+          </ol>
+          <h1>API接入项目档案列表</h1>
+
+          <div class="row margin-bottom-30">
+            <div class="col-md-12">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="#">新接入项目数 <span class="badge">10</span></a></li>
+                <li><a href="#">总接入项目数 <span class="badge">60</span></a></li>
+                <li><a href="#">项目数 <span class="badge">3</span></a></li>
+              </ul>          
+            </div>
+          </div> 
+          <div class="row">
+            <div class="col-md-12">
+              <div class="btn-group pull-right" id="templatemo_sort_btn">
+                <button type="button" class="btn btn-default">Sort by</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">项目名称</a></li>
+                  <li><a href="#">接入日期</a></li>
+                  <li><a href="#">所属系统</a></li>
+                </ul>
+              </div>
+              <div class="table-responsive">
+                <h4 class="margin-bottom-15">项目列表</h4>
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Edit</th>
+                      <th>当前状态</th>
+                      <th>项目名称</th>
+                      <th>接入日期</th>
+                      <th>接入环境</th>
+                      <th>负责人</th>
+                      <th>所属客户</th>
+                      <th>所属系统</th>
+                      <th>所属分公司</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>正常</td>
+                      <td>John</td>
+                      <td>2016-05-03</td>
+                      <td>联调环境</td>
+                      <td>霍壮宁</td>
+                      <td>华侨城</td>
+                      <td>a@company.com</td>
+                      <td>上海</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>正常</td>
+                      <td>Bill</td>
+                      <td>2016-04-22</td>
+                      <td>联调环境</td>
+                      <td>刘安</td>
+                      <td>四川九寨沟</td>
+                      <td>bg@company.com</td>
+                      <td>北京</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>异常</td>
+                      <td>Authen</td>
+                      <td>2016-04-09</td>
+                      <td>中试环境</td>
+                      <td>霍壮宁</td>
+                      <td>万科</td>
+                      <td>aj@company.com</td>
+                      <td>佛山</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>部份正常</td>
+                      <td>Jesica</td>
+                      <td>2016-04-01</td>
+                      <td>中试环境</td>
+                      <td>余腾</td>
+                      <td>格力</td>
+                      <td>jh@company.com</td>
+                      <td>东莞</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>正常</td>
+                      <td>Tom</td>
+                      <td>2015-09-21</td>
+                      <td>生产环境</td>
+                      <td>余腾</td>
+                      <td>@tg</td>
+                      <td>tg@company.com</td>
+                      <td>西安</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>
+                        <a href="APIProjectInfo.html" class="btn btn-primary">编辑</a>
+                        <a href="#" class="btn btn-default">删除</a>
+                      </td>
+                      <td>未开始</td>
+                      <td>Book</td>
+                      <td>2015-08-10</td>
+                      <td>生产环境</td>
+                      <td>刘安</td>
+                      <td>@br</td>
+                      <td>br@company.com</td>
+                      <td>南京</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="formactdion pull-left">
+                  <a href="APIProjectInfo.html" class="btn btn-primary">新增</a>
+                </div>
+                <ul class="pagination pull-right">
+                  <li class="disabled"><a href="#">&laquo;</a></li>
+                  <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">5 <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+            </div>
+            <div class="modal-footer">
+              <a href="sign-in.html" class="btn btn-primary">Yes</a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="templatemo-footer">
+        <div class="templatemo-copyright">
+          <p>Copyright &copy; 2016 捷顺科技智慧运维中心 <!-- Credit: www.templatemo.com --></p>
+        </div>
+      </footer>
+    </div>
+
+</div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/templatemo_script.js"></script>
+   
+  </body>
+</html>

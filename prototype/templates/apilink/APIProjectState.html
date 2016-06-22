@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+  <title>捷顺科技运维中心运维管理平台</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="../../css/templatemo_main.css">
+<!-- 
+Dashboard Template 
+http://www.templatemo.com/preview/templatemo_415_dashboard
+-->
+</head>
+<body>
+  <div id="main-wrapper">
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <div class="logo"><img src="../../images/logo.png"/><h1>捷顺科技运维管理平台</h1></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="template-page-wrapper">
+      <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+          <li>
+            <form class="navbar-form">
+              <input type="text" class="form-control" id="templatemo_search_box" placeholder="Search...">
+              <span class="btn btn-default">Go</span>
+            </form>
+          </li>
+          <li ><a href="../../index.html"><i class="fa fa-home"></i>仪表盘</a></li>
+          <li class="sub">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>项目在线率管理 <div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="../project/ProjectList.html">接入项目档案列表</a></li>
+              <li><a href="../project/ProjectOnlineList.html">项目在线日志管理</a></li>
+              <li><a href="../project/ProjectOnlineState.html">项目在线率统计分析</a></li>
+            </ul>
+          </li>
+          <li class="sub open">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>API接入管理<div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li ><a href="APICustomerList.html">API接入客户档案</a></li>
+              <li><a href="APIProjectList.html">API接入项目档案</a></li>
+              <li class="active"><a href="APIProjectState.html">API接入项目统计分析</a></li>
+            </ul>
+          </li>
+          <li class="sub">
+            <a href="javascript:;">
+              <i class="fa fa-database"></i>自动化部署管理<div class="pull-right"><span class="caret"></span></div>
+            </a>
+            <ul class="templatemo-submenu">
+              <li><a href="#">主机档案</a></>
+              <li><a href="#">项目档案</a></li>
+              <li><a href="#">业务服务档案</a></li>
+              <li><a href="#">管理系统(N)部署</a></li>
+              <li><a href="#">集成系统(N)部置</a></li>
+              <li><a href="#">Openfire(N)部置</a></li>
+              <li><a href="#">管理系统(C)部署</a></li>
+              <li><a href="#">集成系统(C)部置</a></li>
+              <li><a href="#">Openfire(C)部署</a></li>
+
+            </ul>
+          </li>
+          <li><a href="javascript:;" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i>Sign Out</a></li>
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+      <!-- data start -->
+      <div class="templatemo-content-wrapper">
+        <div class="templatemo-content">
+          <ol class="breadcrumb">
+            <li><a href="index.html">Admin Panel</a></li>
+            <li><a href="#">Data Visualization</a></li>
+            <li class="active">Charts</li>
+          </ol>
+          <h1>仪表盘</h1>
+          <p>
+          <div class="templatemo-charts">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-info">
+                  <div class="panel-heading">接入项目统计分析</div>
+                </div>
+                <div class="row templatemo-chart-row">
+
+                  <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <canvas id="templatemo-pie-chart"></canvas>
+                    <h4>接入客户数：30</h4>
+                  </div>
+                  <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <canvas id="templatemo-doughnut-chart"></canvas>
+                    <h4>接入项目数:150</h4>
+                  </div>
+
+                  <div class="templatemo-chart-box col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <canvas id="templatemo-radar-chart"></canvas>
+                    <h4>联周异常原因分析</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              
+              <div class="col-md-6 col-sm-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">项目API接入联调分析</div>
+                  <canvas id="templatemo-bar-chart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Are you sure you want to sign out?</h4>
+            </div>
+            <div class="modal-footer">
+              <a href="sign-in.html" class="btn btn-primary">Yes</a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="templatemo-footer">
+        <div class="templatemo-copyright">
+          <p>Copyright &copy; 2016 捷顺科技智慧运维中心 <!-- Credit: www.templatemo.com --></p>
+        </div>
+      </footer>
+    </div>
+
+</div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/Chart.min.js"></script>
+    <script src="../../js/templatemo_script.js"></script>
+    <script type="text/javascript">
+      // Line chart
+      var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+      var lineChartData = {
+        labels : ["January","February","March","April","May","June","July"],
+        datasets : [
+        {
+          label: "一系统",
+          fillColor : "rgba(220,220,220,0.2)",
+          strokeColor : "rgba(220,220,220,1)",
+          pointColor : "rgba(220,220,220,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(220,220,220,1)",
+          data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        },
+        {
+          label: "二系统",
+          fillColor : "rgba(151,187,205,0.2)",
+          strokeColor : "rgba(151,187,205,1)",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(151,187,205,1)",
+          data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        }
+        ]
+
+      } // lineChartData
+
+      var pieChartData = [
+      {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "一系统"
+      },
+      {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "二系统"
+      },
+      {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "三系统"
+      }
+      ] // pie chart data
+
+      // radar chart
+      var radarChartData = {
+        labels: ["网络不通", "适配器关闭", "SDK服务停止", "客户不接入", "集成服务不在线", "适配器假死", "前端电脑当机"],
+        datasets: [
+        {
+          label: "一系统",
+          fillColor: "rgba(255,90,94,0.2)",
+          strokeColor: "rgba(255,90,94,1)",
+          pointColor: "rgba(255,90,94,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: [65, 59, 90, 81, 56, 55, 40]
+        },
+        {
+          label: "二系统",
+          fillColor: "rgba(90,211,209,0.2)",
+          strokeColor: "rgba(90,211,209,1)",
+          pointColor: "rgba(90,211,209,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [28, 48, 40, 19, 96, 27, 100]
+        },
+        {
+          label: "三系统",
+          fillColor: "rgba(255,200,112,0.2)",
+          strokeColor: "rgba(255,200,112,1)",
+          pointColor: "rgba(255,200,112,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [43, 41, 35, 21, 41, 33, 90]
+        }
+        ]
+      }; // radar chart
+
+      // polar area chart
+      var polarAreaChartData = [
+      {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Red"
+      },
+      {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Green"
+      },
+      {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Yellow"
+      },
+      {
+        value: 40,
+        color: "#949FB1",
+        highlight: "#A8B3C5",
+        label: "Grey"
+      },
+      {
+        value: 120,
+        color: "#4D5360",
+        highlight: "#616774",
+        label: "Dark Grey"
+      }
+
+      ];
+
+      window.onload = function(){
+        //var ctx_line = document.getElementById("templatemo-line-chart").getContext("2d");
+        var ctx_bar = document.getElementById("templatemo-bar-chart").getContext("2d");
+        var ctx_pie = document.getElementById("templatemo-pie-chart").getContext("2d");
+        var ctx_doughnut = document.getElementById("templatemo-doughnut-chart").getContext("2d");
+        var ctxRadar = document.getElementById("templatemo-radar-chart").getContext("2d");
+        //var ctxPolar = document.getElementById("templatemo-polar-chart").getContext("2d");
+
+        /*window.myLine = new Chart(ctx_line).Line(lineChartData, {
+          responsive: true
+        });*/
+        window.myBar = new Chart(ctx_bar).Bar(lineChartData, {
+          responsive: true
+        });
+        window.myPieChart = new Chart(ctx_pie).Pie(pieChartData,{
+          responsive: true
+        });
+        window.myDoughnutChart = new Chart(ctx_doughnut).Doughnut(pieChartData,{
+          responsive: true
+        });
+        var myRadarChart = new Chart(ctxRadar).Radar(radarChartData, {
+          responsive: true
+        });
+        /*var myPolarAreaChart = new Chart(ctxPolar).PolarArea(polarAreaChartData, {
+          responsive: true
+        });*/
+      }
+    </script>
+  </body>
+</html>
