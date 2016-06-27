@@ -78,7 +78,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller : 'APICustomerEditCtrl'
     })
     .state('APICustomerAdd',{
-        url:'/APICustomerEdit',
+        url:'/APICustomerAdd',
         templateUrl:'templates/apilink/APICustomerAdd.html',
         controller : 'APICustomerAddCtrl'
     })

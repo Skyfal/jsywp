@@ -20,8 +20,13 @@
         </div>
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="bizDate" class="control-label">接入日期</label>
-            <input type="date" class="form-control" id="bizDate" value="2016-04-09" >
+            <label for="projectName" class="control-label">接入日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
           <div class="col-md-6 margin-bottom-15">
              <label for="linkMaster" class="control-label">业务联系人</label>

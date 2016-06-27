@@ -9,16 +9,6 @@
     <div class="col-md-12">
       <form role="form" id="templatemo-preferences-form">
         <div class="row">
-         <div class="col-md-6 margin-bottom-15">
-            <label for="coperateStatus" class="control-label">合作状态</label>
-           <select class="form-control margin-bottom-15" id="coperateStatus" >
-            <option>售前接洽</option>
-            <option>合作中</option>
-            <option>中止合作</option>
-           </select>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-6 margin-bottom-15">
             <label for="customerCode" class="control-label">客户编号</label>
             <input type="text" class="form-control" id="customerCode" value="" >
@@ -30,8 +20,13 @@
         </div>
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="bizDate" class="control-label">接入日期</label>
-            <input type="date" class="form-control" id="bizDate" value="" >
+            <label for="projectName" class="control-label">接入日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
           <div class="col-md-6 margin-bottom-15">
              <label for="linkMaster" class="control-label">业务联系人</label>
@@ -41,32 +36,28 @@
         
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="bizSystem" class="control-label">所属系统</label>
-            <select class="form-control margin-bottom-15" id="bizSystem" >
-            <option>业务一系统</option>
-            <option>业务二系统</option>
-            <option>业务三系统</option>
-           </select>
+            <label class="control-label">所属系统</label>
+             <select class="form-control" ng-model="subsystem" ng-options="subsystem.label for subsystem in subsystems">
+              <option value="">-- 请选择所属系统 --</option>
+            </select>
           </div>
           <div class="col-md-6 margin-bottom-15">
-            <label for="subCompany" class="control-label">所属分公司</label>
-            <select class="form-control margin-bottom-15" id="subCompany" >
-              <option>北京分公司</option>
-              <option>广州分公司</option>
-              <option>上海分公司</option>
-              <option>东莞公司</option>
-              <option>佛山分公司</option>
-              <option>西安分公司</option>
-              <option>汕头分公司</option>
-              <option>杭州分公司</option>
+            <label class="control-label">所属分公司</label>
+             <select class="form-control" ng-model="subcompany"
+              ng-options="subcompany for subcompany in subsystem.subcompanys">
+              <option value="">-- 请选择所属分公司 --</option>
             </select>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="linkDate" class="control-label">监测日期</label>
-            <input type="text" class="form-control" id="linkDate" value="" >
+            <label for="coperateStatus" class="control-label">合作状态</label>
+            <select class="form-control margin-bottom-15" id="coperateStatus" >
+            <option>售前接洽</option>
+            <option>合作中</option>
+            <option>中止合作</option>
+           </select>
           </div>
           <div class="col-md-6 margin-bottom-15">
             <label for="onlineStataus" class="control-label">在线状态</label>

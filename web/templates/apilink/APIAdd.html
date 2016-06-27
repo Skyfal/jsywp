@@ -33,8 +33,13 @@
         </div>
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="linkDate" class="control-label">接口创建日期</label>
-            <input type="date" class="form-control" id="linkDate" value="">
+            <label for="projectName" class="control-label">接口创建日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
           <div class="col-md-6 margin-bottom-15">
              <label for="linkMaster" class="control-label">接口开发人</label>
@@ -44,7 +49,7 @@
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
             <label for="linkDate" class="control-label">接口最新测试日期</label>
-            <input type="date" class="form-control" id="linkDate" value="">
+            <input type="date" class="form-control" id="linkDate" value="NULL">
           </div>
           <div class="col-md-6 margin-bottom-15">
             <label for="onlineStataus" class="control-label">接口使用状态</label>

@@ -88,12 +88,22 @@
         </div>
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="platform" class="control-label">联调接入日期</label>
-            <input type="date" class="form-control" id="linkDate" value="" >
+            <label for="projectName" class="control-label">联调接入日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt" is-open="opened" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
           <div class="col-md-6 margin-bottom-15">
-             <label for="linkMaster" class="control-label">转生产环境日期</label>
-             <input type="date" class="form-control" id="linkDate" value="" >
+            <label for="projectName" class="control-label">转生产环境日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt1" is-open="opened1" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
         </div>
         <div class="row">

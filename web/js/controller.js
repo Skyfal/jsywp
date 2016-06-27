@@ -273,11 +273,38 @@ app.controller('ProjectOnlineListCtrl', ['$scope','$state', '$http','Upload',fun
 }])
 
 app.controller('ProjectOnlineEditCtrl', ['$scope','$stateParams', function($scope,$stateParams){
-	 console.log($stateParams);
+	console.log($stateParams);
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
+    $scope.dt1=new Date();
+
+    $scope.openCalendar1 = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = true;
+    }
 }])
 
 app.controller('ProjectOnlineAddCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
+    $scope.dt1=new Date();
+
+    $scope.openCalendar1 = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = true;
+    }
 }])
 
 app.controller('APICustomerListCtrl', ['$scope','$state', function($scope,$state){
@@ -355,11 +382,23 @@ app.controller('APICustomerListCtrl', ['$scope','$state', function($scope,$state
 }])
 
 app.controller('APICustomerEditCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
 }])
 
 app.controller('APICustomerAddCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
 }])
 
 app.controller('APIProjectListCtrl', ['$scope','$state', function($scope,$state){
@@ -440,11 +479,37 @@ app.controller('APIProjectListCtrl', ['$scope','$state', function($scope,$state)
 }])
 
 app.controller('APIProjectInfoCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
+    $scope.dt1=new Date();
+
+    $scope.openCalendar1 = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = true;
+    }
 }])
 
 app.controller('APIProjectAddCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
+    $scope.dt1=new Date();
+
+    $scope.openCalendar1 = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = true;
+    }
 }])
 
 app.controller('APIListCtrl', ['$scope','$state', function($scope,$state){
@@ -523,7 +588,13 @@ app.controller('APIEditCtrl', ['$scope', function($scope){
 }])
 
 app.controller('APIAddCtrl', ['$scope', function($scope){
-	
+	$scope.dt=new Date();
+
+    $scope.openCalendar = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+    }
 }])
 
 app.controller('HostsCtrl', ['$scope','$state', function($scope,$state){
