@@ -51,24 +51,16 @@
         
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="bizSystem" class="control-label">所属系统</label>
-            <select class="form-control margin-bottom-15" id="bizSystem" >
-            <option>业务一系统</option>
-            <option>业务二系统</option>
-            <option>业务三系统</option>
-           </select>
+            <label class="control-label">所属系统</label>
+             <select class="form-control" ng-model="subsystem" ng-options="subsystem.label for subsystem in subsystems">
+              <option value="">-- 请选择所属系统 --</option>
+            </select>
           </div>
           <div class="col-md-6 margin-bottom-15">
-            <label for="subCompany" class="control-label">所属分公司</label>
-            <select class="form-control margin-bottom-15" id="subCompany" >
-              <option>北京分公司</option>
-              <option>广州分公司</option>
-              <option>上海分公司</option>
-              <option>东莞公司</option>
-              <option>佛山分公司</option>
-              <option>西安分公司</option>
-              <option>汕头分公司</option>
-              <option>杭州分公司</option>
+            <label class="control-label">所属分公司</label>
+             <select class="form-control" ng-model="subcompany"
+              ng-options="subcompany for subcompany in subsystem.subcompanys">
+              <option value="">-- 请选择所属分公司 --</option>
             </select>
           </div>
         </div>

@@ -51,24 +51,16 @@
         
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="bizSystem" class="control-label">所属系统</label>
-            <select class="form-control margin-bottom-15" id="bizSystem" >
-            <option>业务一系统</option>
-            <option>业务二系统</option>
-            <option>业务三系统</option>
-           </select>
+            <label class="control-label">所属系统</label>
+             <select class="form-control" ng-model="subsystem" ng-options="subsystem.label for subsystem in subsystems">
+              <option value="">-- 请选择所属系统 --</option>
+            </select>
           </div>
           <div class="col-md-6 margin-bottom-15">
-            <label for="subCompany" class="control-label">所属分公司</label>
-            <select class="form-control margin-bottom-15" id="subCompany" >
-              <option>北京分公司</option>
-              <option>广州分公司</option>
-              <option>上海分公司</option>
-              <option>东莞公司</option>
-              <option>佛山分公司</option>
-              <option>西安分公司</option>
-              <option>汕头分公司</option>
-              <option>杭州分公司</option>
+            <label class="control-label">所属分公司</label>
+             <select class="form-control" ng-model="subcompany"
+              ng-options="subcompany for subcompany in subsystem.subcompanys">
+              <option value="">-- 请选择所属分公司 --</option>
             </select>
           </div>
         </div>
@@ -77,9 +69,9 @@
           <div class="col-md-6 margin-bottom-15">
             <label for="linkDate" class="control-label">接入版本</label>
             <select class="form-control margin-bottom-15" id="bizSystem" >
-            <option>V1.0</option>
-            <option>V2.0</option>
-           </select>
+              <option>V1.0</option>
+              <option>V2.0</option>
+            </select>
           </div>
           <div class="col-md-6 margin-bottom-15">
              <label for="linkMaster" class="control-label">联调负责人</label>
@@ -122,46 +114,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
+                <tr ng-repeat="apiproject in apiprojects">
+                  <td>{{$index+1}}</td>
                   <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
+                    <a ui-sref="APIProjectInfo" class="btn btn-default">测试</a>
+                    <a ui-sref="APIProjectInfo" class="btn btn-default">删除</a>
                   </td>
-                  <td>正常</td>
-                  <td>查询人员门禁设备协议</td>
-                  <td>3c.door.querydoors</td>
-                  <td>2016-05-11 11:20:00</td>
-                  <td>是
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
-                  </td>
-                  <td>正常</td>
-                  <td>门禁开门</td>
-                  <td>3c.door.opendoor</td>
-                  <td>2016-05-11 11:21:00</td>
-                  <td>是
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
-                  </td>
-                  <td>异常</td>
-                  <td>停车场空车位数查询</td>
-                  <td>3c.park.queryparkspace</td>
-                  <td>2016-05-11 10:21:00</td>
-                  <td class="offline">否
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
+                  <td>{{apiproject.status}}</td>
+                  <td>{{apiproject.name}}</td>
+                  <td>{{apiproject.serviceid}}</td>
+                  <td>{{apiproject.recentdate}}</td>
+                  <td>{{apiproject.input}}
+                    <a data-toggle="modal" data-target="#setinput" style="cursor: pointer;">设置</a>
+                    <a data-toggle="modal" data-target="#checkoutput" style="cursor: pointer;">返回</a>
                   </td>
                 </tr>
               </tbody>
@@ -191,3 +156,85 @@
     </div>
   </div>
 </p>
+<div style="top:10%;max-height: 66%;" class="modal fade" id="setinput" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="width:33%;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               API参数设置
+            </h4>
+         </div>
+         <div class="modal-body">
+          <div class="row">
+            <div class="col-md-8 margin-bottom-15 col-md-offset-2">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>输入</th>
+                      <th>值</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody ng-init="inputss=apis.input;">
+                    <tr ng-repeat="input in inputss">
+                      <td>{{input}}</td>
+                      <td><input type="text" class="form-control col-md-1" ng-model="value" ng-blur="set(input,value)"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+         </div>
+         <div class="modal-footer">
+            <a class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Quit</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal -->
+</div>
+<div style="top:10%;max-height: 66%;" class="modal fade" id="checkoutput" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="width:33%;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                输出参数
+            </h4>
+         </div>
+         <div class="modal-body">
+          <div class="row">
+            <div class="col-md-8 margin-bottom-15 col-md-offset-2">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>输出</th>
+                      <th>值</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody ng-init="outputs=apis.output;" >
+                    <tr ng-repeat="output in outputs">
+                      <td>{{output}}</td>
+                      <td>{{output}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+         </div>
+         <div class="modal-footer">
+            <a class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Quit</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal -->
+</div>

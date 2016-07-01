@@ -493,6 +493,22 @@ app.controller('APIProjectInfoCtrl', ['$scope', function($scope){
         $event.stopPropagation();
         $scope.opened1 = true;
     }
+
+    $scope.apiprojects = [
+			{id:'1',status:'正常',name:'门禁开门',serviceid:'3c.door.opendoor',recentdate:'2016-5-9',input:'是'},
+			{id:'2',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'},
+			{id:'3',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'},
+			{id:'4',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'}
+		];
+	$scope.apis={
+		input:['serviceId','requestType','parkCode','carNo'],
+		output:['serviceId','resultCode','message','objectId','operateType','carNo','enterTime','enterPicUrl']
+	};
+
+	$scope.set=function(input,value){
+		console.log(input);
+		console.log(value);
+	}
 }])
 
 app.controller('APIProjectAddCtrl', ['$scope', function($scope){
@@ -578,13 +594,66 @@ app.controller('APIListCtrl', ['$scope','$state', function($scope,$state){
 }])
 
 app.controller('APIEditCtrl', ['$scope', function($scope){
-    $scope.dt=new Date();
+	$scope.apis={
+		input:['serviceId','requestType','parkCode','carNo'],
+		output:['serviceId','resultCode','message','objectId','operateType','carNo','enterTime','enterPicUrl']
+	};
 
-    $scope.openCalendar = function ($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        $scope.opened = true;
-    }
+	$scope.inputshow1=false;
+	$scope.input1='';
+	$scope.inputadd= function (){
+		$scope.input1='';
+		$scope.show=true;
+	};
+	$scope.inputdelete= function (input){
+		$scope.apis.input.splice(input,1);
+		console.log($scope.apis.input);
+	};
+	$scope.inputblur= function (){
+		if($scope.inputshow1.length==0){
+			$scope.inputshow1=true;
+		}else{
+			$scope.inputshow1=false;
+		}
+	};
+	$scope.save1= function (){
+		if($scope.input1.length!=0){
+			$scope.apis.input.push($scope.input1);
+			console.log($scope.apis.input);
+			$scope.show=false;
+		}else{
+			$scope.inputshow1=true;
+		}
+	};
+
+	$scope.outputshow1=false;
+	$scope.output1='';
+	$scope.outputadd= function (){
+		$scope.output1='';
+		$scope.show1=true;
+	};
+	$scope.outputdelete= function (output){
+		console.log(output);
+		$scope.apis.output.splice(output,1);
+		console.log($scope.apis.output);
+	};
+	$scope.outputblur= function (){
+		if($scope.outputshow1.length==0){
+			$scope.outputshow1=true;
+		}else{
+			$scope.outputshow1=false;
+		}
+	};
+	$scope.save2= function (){
+		if($scope.output1.length!=0){
+			$scope.apis.output.push($scope.output1);
+			console.log($scope.apis.output);
+			$scope.show1=false;
+		}else{
+			$scope.outputshow1=true;
+		}
+	}
+	;
 }])
 
 app.controller('APIAddCtrl', ['$scope', function($scope){
@@ -594,7 +663,74 @@ app.controller('APIAddCtrl', ['$scope', function($scope){
         $event.preventDefault();
         $event.stopPropagation();
         $scope.opened = true;
-    }
+    };
+    $scope.dt1=new Date();
+
+    $scope.openCalendar1 = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened1 = true;
+    };
+    $scope.apis={
+		input:[],
+		output:[]
+	};
+	
+	$scope.inputshow1=false;
+	$scope.input1='';
+	$scope.inputadd= function (){
+		$scope.input1='';
+		$scope.show=true;
+	};
+	$scope.inputdelete= function (input){
+		console.log(input);
+		$scope.apis.input.splice(input,1);
+		console.log($scope.apis.input);
+	};
+	$scope.inputblur= function (){
+		if($scope.inputshow1.length==0){
+			$scope.inputshow1=true;
+		}else{
+			$scope.inputshow1=false;
+		}
+	};
+	$scope.save1= function (){
+		if($scope.input1.length!=0){
+			$scope.apis.input.push($scope.input1);
+			console.log($scope.apis.input);
+			$scope.show=false;
+		}else{
+			$scope.inputshow1=true;
+		}
+	};
+
+	$scope.outputshow1=false;
+	$scope.output1='';
+	$scope.outputadd= function (){
+		$scope.output1='';
+		$scope.show1=true;
+	};
+	$scope.outputdelete= function (output){
+		console.log(output);
+		$scope.apis.output.splice(output,1);
+		console.log($scope.apis.output);
+	};
+	$scope.outputblur= function (){
+		if($scope.outputshow1.length==0){
+			$scope.outputshow1=true;
+		}else{
+			$scope.outputshow1=false;
+		}
+	};
+	$scope.save2= function (){
+		if($scope.output1.length!=0){
+			$scope.apis.output.push($scope.output1);
+			console.log($scope.apis.output);
+			$scope.show1=false;
+		}else{
+			$scope.outputshow1=true;
+		}
+	};
 }])
 
 app.controller('HostsCtrl', ['$scope','$state', function($scope,$state){

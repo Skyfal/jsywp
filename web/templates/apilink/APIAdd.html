@@ -1,9 +1,9 @@
 <ol class="breadcrumb">
   <li><a ui-sref="#">API接入管理</a></li>
   <li><a ui-sref="APIList">API接口清单</a></li>
-  <li class="active">API接口编辑</li>
+  <li class="active">API接口新增</li>
 </ol>
-<h1>API接口编辑</h1>
+<h1>API接口新增</h1>
 <p>
 <div class="row">
     <div class="col-md-12">
@@ -42,14 +42,19 @@
             </p>
           </div>
           <div class="col-md-6 margin-bottom-15">
-             <label for="linkMaster" class="control-label">接口开发人</label>
-            <input type="text" class="form-control" id="linkMaster" value="">
+            <label for="projectName" class="control-label">接口最新测试日期</label>
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="dt1" is-open="opened1" close-text="Close" required/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openCalendar1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 margin-bottom-15">
-            <label for="linkDate" class="control-label">接口最新测试日期</label>
-            <input type="date" class="form-control" id="linkDate" value="NULL">
+            <label for="linkMaster" class="control-label">接口参数设置</label><br>
+            <a data-toggle="modal" data-target="#setAPI" class="btn btn-primary col-md-offset-1">点击设置</a>
           </div>
           <div class="col-md-6 margin-bottom-15">
             <label for="onlineStataus" class="control-label">接口使用状态</label>
@@ -86,3 +91,83 @@
     </div>
   </div>
 </p>
+<div style="top:10%;max-height: 66%;" class="modal fade" id="setAPI" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               API参数设置
+            </h4>
+         </div>
+         <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 margin-bottom-15">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>输入<a ng-click="inputadd()" class="pull-right" style="cursor: pointer;"><span class="glyphicon glyphicon-plus"></span></a></th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody ng-init="inputs=apis.input;" >
+                    <tr ng-repeat="input in inputs">
+                      <td>{{input}}<a ng-click="inputdelete($index)" class="pull-right" style="cursor: pointer;"><span class="glyphicon glyphicon-minus"></span></a></td>
+                    </tr>
+                    <tr ng-show="show">
+                      <td>
+                        <div class="row">
+                          <div class="col-md-6 margin-bottom-10">
+                            <input ng-blur="inputblur()" type="text" class="form-control col-md-1" ng-model="input1"><span ng-show="inputshow1" style="color:red">输入不能为空</span>
+                          </div>
+                          <div class="col-md-6 margin-bottom-10">
+                            <a ng-click="save1()" style="cursor: pointer;"><span class="glyphicon glyphicon-plus pull-right"></span></a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 margin-bottom-15">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>输出<a ng-click="outputadd()" class="pull-right" style="cursor: pointer;"><span class="glyphicon glyphicon-plus"></span></a></th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody ng-init="outputs=apis.output;" >
+                    <tr ng-repeat="output in outputs">
+                      <td>{{output}}<a ng-click="outputdelete($index)" class="pull-right" style="cursor: pointer;"><span class="glyphicon glyphicon-minus"></span></a></td>
+                    </tr>
+                    <tr ng-show="show1">
+                      <td>
+                        <div class="row">
+                          <div class="col-md-6 margin-bottom-10">
+                            <input ng-blur="outputblur()" type="text" class="form-control col-md-1" ng-model="output1"><span ng-show="outputshow1" style="color:red">输入不能为空</span>
+                          </div>
+                          <div class="col-md-6 margin-bottom-10">
+                            <a ng-click="save2()" style="cursor: pointer;"><span class="glyphicon glyphicon-plus pull-right"></span></a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+         </div>
+         <div class="modal-footer">
+            <a class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Quit</button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal -->
+</div>
