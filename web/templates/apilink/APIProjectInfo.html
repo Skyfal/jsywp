@@ -179,8 +179,8 @@
                     </tr>
                   </thead>
                   
-                  <tbody ng-init="inputss=apis.input;">
-                    <tr ng-repeat="input in inputss">
+                  <tbody>
+                    <tr ng-repeat="input in inputs">
                       <td>{{input}}</td>
                       <td><input type="text" class="form-control col-md-1" ng-model="value" ng-blur="set(input,value)"></td>
                     </tr>
@@ -220,7 +220,7 @@
                     </tr>
                   </thead>
                   
-                  <tbody ng-init="outputs=apis.output;" >
+                  <tbody>
                     <tr ng-repeat="output in outputs">
                       <td>{{output}}</td>
                       <td>{{output}}</td>

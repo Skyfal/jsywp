@@ -500,14 +500,13 @@ app.controller('APIProjectInfoCtrl', ['$scope', function($scope){
 			{id:'3',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'},
 			{id:'4',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'}
 		];
-	$scope.apis={
-		input:['serviceId','requestType','parkCode','carNo'],
-		output:['serviceId','resultCode','message','objectId','operateType','carNo','enterTime','enterPicUrl']
-	};
+	$scope.inputs=['serviceId','requestType','parkCode','carNo'];
+	$scope.outputs=['serviceId','resultCode','message','objectId','operateType','carNo','enterTime','enterPicUrl'];
 
 	$scope.set=function(input,value){
 		console.log(input);
 		console.log(value);
+		console.log(input+":"+value);
 	}
 }])
 
