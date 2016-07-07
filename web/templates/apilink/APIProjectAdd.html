@@ -110,60 +110,41 @@
                   <th>接口名称</th>
                   <th>接口服务</th>
                   <th>最近测试日期</th>
-                  <th>具备参数</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
+                <tr ng-repeat="apiproject in apiprojects">
+                  <td>{{$index+1}}</td>
                   <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
+                    <a ui-sref="APIProjectInfo" class="btn btn-default">删除</a>
                   </td>
-                  <td>正常</td>
-                  <td>查询人员门禁设备协议</td>
-                  <td>3c.door.querydoors</td>
-                  <td>2016-05-11 11:20:00</td>
-                  <td>是
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
-                  </td>
-                  <td>正常</td>
-                  <td>门禁开门</td>
-                  <td>3c.door.opendoor</td>
-                  <td>2016-05-11 11:21:00</td>
-                  <td>是
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>
-                    <a href="#" class="btn btn-default btn-sm">测试</a>
-                    <a href="#" class="btn btn-default btn-sm">删除</a>
-                  </td>
-                  <td>异常</td>
-                  <td>停车场空车位数查询</td>
-                  <td>3c.park.queryparkspace</td>
-                  <td>2016-05-11 10:21:00</td>
-                  <td class="offline">否
-                    <a href="javascript:;" data-toggle="modal" data-target="#parameterSetting">设置</a>
-                  </td>
+                  <td>{{apiproject.status}}</td>
+                  <td>{{apiproject.name}}</td>
+                  <td>{{apiproject.serviceid}}</td>
+                  <td>{{apiproject.recentdate}}</td>
                 </tr>
               </tbody>
             </table>
             <div class="pull-left" style="margin-top: -18px;">
-              <a href="APIList.html" class="btn btn-default btn-sm">新增接口</a>
-              <a href="#" class="btn btn-default btn-sm">全部测试</a>
+              <a ui-sref="APIProjectAdd" class="btn btn-default btn-sm" ng-click="showit()">新增接口</a>
+            </div>
+            <div class="row" ng-show="showorhide">
+              <br>
+              <div class="col-md-3">
+                <input type="text" class="form-control" value="未测试" disabled>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="接口名称" required>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="接口服务" required>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-default" ng-click="save()">保存</button>
+                <button class="btn btn-default" ng-click="hideit()">取消</button>
+              </div>
             </div>
           </div>
-
         </div> 
         <div class="row">
           <div class="col-md-12 margin-bottom-15" style="margin-top: 20px;">

@@ -132,8 +132,24 @@
               </tbody>
             </table>
             <div class="pull-left" style="margin-top: -18px;">
-              <a href="APIList.html" class="btn btn-default btn-sm">新增接口</a>
-              <a href="#" class="btn btn-default btn-sm">全部测试</a>
+              <a ui-sref="APIProjectInfo" class="btn btn-default btn-sm" ng-click="showit()">新增接口</a>
+              <a ui-sref="APIProjectInfo" class="btn btn-default btn-sm">全部测试</a>
+            </div>
+            <div class="row" ng-show="showorhide">
+              <br>
+              <div class="col-md-3">
+                <input type="text" class="form-control" value="未测试" disabled>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="接口名称" required>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="接口服务" required>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-default" ng-click="save()">保存</button>
+                <button class="btn btn-default" ng-click="hideit()">取消</button>
+              </div>
             </div>
           </div>
 

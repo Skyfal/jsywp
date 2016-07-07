@@ -508,6 +508,13 @@ app.controller('APIProjectInfoCtrl', ['$scope', function($scope){
 		console.log(value);
 		console.log(input+":"+value);
 	}
+	$scope.showorhide=false;
+	$scope.showit=function(){
+		$scope.showorhide=true;
+	};
+	$scope.hideit=function(){
+		$scope.showorhide=false;
+	};
 }])
 
 app.controller('APIProjectAddCtrl', ['$scope', function($scope){
@@ -525,6 +532,19 @@ app.controller('APIProjectAddCtrl', ['$scope', function($scope){
         $event.stopPropagation();
         $scope.opened1 = true;
     }
+    $scope.apiprojects = [
+			{id:'1',status:'正常',name:'门禁开门',serviceid:'3c.door.opendoor',recentdate:'2016-5-9',input:'是'},
+			{id:'2',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'},
+			{id:'3',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'},
+			{id:'4',status:'正常',name:'开门协议',serviceid:'3c.door.querydoors',recentdate:'2016-5-9',input:'是'}
+		];
+	$scope.showorhide=false;
+	$scope.showit=function(){
+		$scope.showorhide=true;
+	};
+	$scope.hideit=function(){
+		$scope.showorhide=false;
+	};
 }])
 
 app.controller('APIListCtrl', ['$scope','$state', function($scope,$state){
